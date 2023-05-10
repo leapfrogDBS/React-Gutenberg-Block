@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "lf-example-block/lf-example-block",
+  "version": "0.1.0",
+  "title": "Leapfrog DBS  Block",
+  "category": "widgets",
+  "icon": "superhero-alt",
+  "description": "An example block for study",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "lf-example-block",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}
