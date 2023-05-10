@@ -4,7 +4,8 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { __ } from '@wordpress/i18n';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -15,10 +16,33 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @return {WPElement} Element to render.
  */
-export default function save() {
+export default function save( { attributes } ) {
+	
+	const { content, align, backgroundColor, textColor, kaLink, linkLabel, hasLinkNofollow } = attributes;
+
+	const blockProps = useBlockProps.save( {
+		className: `has-text-align-${ align }`
+	} );
+	
 	return (
-		<p { ...useBlockProps.save() }>
-			{ 'Leapfrog DBS  Block – hello from the saved content!' }
-		</p>
+		<div 
+			{ ...blockProps }
+			style={ { backgroundColor: backgroundColor } }
+		>
+			<RichText.Content 
+				tagName="p" 
+				value={ content } 
+				style={ { color: textColor } }
+			/>
+			<p>
+				<a 
+					href={ kaLink }
+					className="ka-button"
+					rel={ hasLinkNofollow ? "nofollow" : "noopener noreferrer" }
+				>
+					{ linkLabel }
+				</a>
+			</p>
+		</div>
 	);
 }

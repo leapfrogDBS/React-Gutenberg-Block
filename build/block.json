@@ -3,7 +3,7 @@
   "apiVersion": 2,
   "name": "lf-example-block/lf-example-block",
   "version": "0.1.0",
-  "title": "Leapfrog DBS  Block",
+  "title": "Leapfrog DBS Block",
   "category": "widgets",
   "icon": "superhero-alt",
   "description": "An example block for study",
@@ -13,5 +13,50 @@
   "textdomain": "lf-example-block",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
-  "style": "file:./style-index.css"
+  "style": "file:./style-index.css",
+  "keywords": [
+    "leapfrog",
+    "example",
+    "superhero"
+  ],
+  "attributes": {
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": "p"
+    },
+    "align": {
+      "type": "string",
+      "default": "none"
+    },
+    "backgroundColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "kaLink": {
+      "type": "string",
+      "default": ""
+    },
+    "linkLabel": {
+      "type": "string",
+      "default": "Check it out!"
+    },
+    "hasLinkNofollow": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "styles": [
+    {
+      "name": "default",
+      "label": "Default",
+      "isDefault": true
+    },
+    {
+      "name": "border",
+      "label": "Border"
+    }
+  ]
 }

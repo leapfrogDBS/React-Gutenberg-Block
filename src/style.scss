@@ -10,3 +10,15 @@
 	color: #fff;
 	padding: 2px;
 }
+
+.wp-block-lf-example-block-lf-example-block {
+	&.is-style-default{
+		border: 0;
+        background-color: #FFE2C7;
+	}
+	&.is-style-border{
+		border: 2px solid #000;
+        border-radius: 16px;
+        background-color: #F6F6F6;
+	}
+}
